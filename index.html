@@ -11,7 +11,13 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="w-10/12 min-h-screen bg-base-200 mx-auto">
     <header class="mx-auto py-3 mb-5">
@@ -22,87 +28,112 @@
         <div class="flex justify-between">
           <div class="rounded w-1/4 mx-auto p-2 bg-white">
             <h3>Total</h3>
-            <p id="total-number" class="font-bold text-xl">8</p>
+            <p id="total-number" class="font-bold text-xl">0</p>
           </div>
           <div class="rounded w-1/4 mx-auto p-2 bg-white">
             <h3>Interview</h3>
-            <p class="text-emerald-500 font-bold text-xl">0</p>
+            <p id="InterviewBtnP" class="text-emerald-500 font-bold text-xl">
+              0
+            </p>
           </div>
           <div class="rounded w-1/4 mx-auto p-2 bg-white">
             <h3>Rejected</h3>
-            <p class="text-red-500 font-bold text-xl">0</p>
+            <p id="RejectedBtnP" class="text-red-500 font-bold text-xl">0</p>
           </div>
         </div>
       </nav>
     </header>
-    <section>
+   
       <div class="">
         <div class="mx-auto mb-4 flex justify-between">
           <h2 class="font-bold mx-10">Available Jobs</h2>
-          <p class="mr-10"><span id="total-jobs">8</span> jobs</p>
+          <p class="mr-10">
+            <span id="Number"></span> <span id="total-jobs">0</span> jobs
+          </p>
         </div>
       </div>
-    </section>
-    <section class="mx-10 mb-4">
+
+    <main class="w-11/12 mx-auto ">
+      <div class="mb-4">
       <button
-        onclick="showbutton('MobileFirstCorp')"
-        class="btn btn-primary w-25"
+      onclick="togglestyle('AllFelter')"
+      id="AllFelter"
+        class="filter-btn btn btn-primary w-25"
       >
         All
       </button>
       <button
-        onclick="showbutton('MobileFirst')"
-        id="Interview-btn"
-        class="btn btn-soft"
+      onclick="togglestyle('InterviewBtn')"
+        id="InterviewBtn"
+        class="filter-btn btn btn-soft"
       >
         Interview
       </button>
-      <button onclick="showbutton('Mobile')" class="btn btn-soft">
-        Rejected
-      </button>
+      <button onclick="togglestyle('RejectedBtn')" id="RejectedBtn" class="filter-btn btn btn-soft">Rejected</button>
+      </div>
+    
+    <!-- No jobs available section-->
+    <section class="hidden">
+      <section class="bg-white mt-4">
+          <div class="py-30 text-center">
+            <img class="mx-auto" src="./pick/pick.png" alt="" />
+            <h2>No jobs available</h2>
+            <p>Check back soon for new job opportunities</p>
+          </div>
+        </section>
+      </section>
     </section>
-    <section id="MobileFirstCorp" class="section-card w-11/12 mx-auto p-5 mb-4 bg-white">
-      <div class="">
+<!-- allCardSection -->
+ <section id="filter-section" class="hidden">
+
+ </section>
+    <section id="allCardSections" class="space-y-4 ">
+    
+    
+     <!-- Mobile First Corp div -->
+      <div class="section-card w-[100%] mx-auto p-8  bg-white">
         <div class="flex justify-between">
           <div class="">
-            <h2>Mobile First Corp</h2>
-            <p>React Native Developer</p>
+            <h2 class="tagName">Mobile First Corp</h2>
+            <p class="Developer">React Native Developer</p>
           </div>
           <button id="" class="delete-btn btn btn-square bg-white">
-           <i class="fa-solid fa-trash-can"></i>
+            <i class="fa-solid fa-trash-can"></i>
           </button>
         </div>
 
         <br />
-        <p class="mb-2">Remote • Full-time • $130,000 - $175,000</p>
-        <button class="btn btn-soft btn-primary text-black mb-2">
-          Not Applied
-        </button>
-        <p>
+        <p class="Remote mb-2">Remote • Full-time • $130,000 - $175,000</p>
+        
+        <p class="Not-Applied btn btn-soft btn-primary text-black mb-2">Not Applied</p>
+         
+        <p class="Build">
           Build cross-platform mobile applications using React Native. Work on
           products used by millions of users worldwide.
         </p>
         <br />
+        <div class="flex gap-3">
         <button
-          id="Interview-btn2"
-          class="btn btn-bg-white text-green-500 border-green-500"
+          id=""
+          class="Interview-btn2 btn btn-bg-white text-green-500 border-green-500"
         >
           Interview
         </button>
         <button
-          id="Rejected-btn2"
-          class="btn btn-bg-white text-red-500 border-red-500"
+          id=""
+          class="Rejected-btn2 btn btn-bg-white text-red-500 border-red-500"
         >
           Rejected
         </button>
+        </div>
       </div>
-    </section>
-    <section id="MobileFirstCorp" class="section-card w-11/12 mx-auto p-5 mb-4 bg-white">
-      <div class="">
+
+       <!-- WebFlow Agency -->
+      <div class="section-card w-[100%] mx-auto p-8  bg-white">
         <div class="flex justify-between">
           <div class="">
-            <h2>WebFlow Agency</h2>
-            <p>Web Designer & Developer</p>
+            <h2 class="tagName">WebFlow Agency</h2>
+            <p class="Developer">Web Designer & Developer</p>
           </div>
           <button id="delet-btn2" class="delete-btn btn btn-square bg-white">
             <i class="fa-solid fa-trash-can"></i>
@@ -110,35 +141,37 @@
         </div>
 
         <br />
-        <p class="mb-2">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
-        <button class="btn btn-soft btn-primary text-black mb-2">
+        <p class="Remote mb-2">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+        <p class="Not-Applied btn btn-soft btn-primary text-black mb-2">
           Not Applied
-        </button>
-        <p>
+        </p>
+        <p class="Build">
           Create stunning web experiences for high-profile clients. Must have
           portfolio and experience with modern web design trends.
         </p>
         <br />
+         <div class="flex gap-3">
         <button
-          id="Interview-btn2"
-          class="btn btn-bg-white text-green-500 border-green-500"
+          id=""
+          class="Interview-btn2 btn btn-bg-white text-green-500 border-green-500"
         >
           Interview
         </button>
         <button
-          id="Rejected-btn2"
-          class="btn btn-bg-white text-red-500 border-red-500"
+          id=""
+          class="Rejected-btn2 btn btn-bg-white text-red-500 border-red-500"
         >
           Rejected
         </button>
+        </div>
       </div>
-    </section>
-    <section id="MobileFirstCorp" class="section-card w-11/12 mx-auto p-5 mb-4 bg-white">
-      <div class="">
+
+      <!-- DataViz Solutions -->
+      <div class="section-card w-[100%] mx-auto p-8 bg-white">
         <div class="flex justify-between">
           <div class="">
-            <h2>DataViz Solutions</h2>
-            <p>Data Visualization Specialist</p>
+            <h2 class="tagName">DataViz Solutions</h2>
+            <p class="Developer">Data Visualization Specialist</p>
           </div>
           <button class="delete-btn btn btn-square bg-white">
             <i class="fa-solid fa-trash-can"></i>
@@ -146,108 +179,111 @@
         </div>
 
         <br />
-        <p class="mb-2">Boston, MA • Full-time • $125,000 - $165,000</p>
-        <button class="btn btn-soft btn-primary text-black mb-2">
+        <p class="Remote mb-2">Boston, MA • Full-time • $125,000 - $165,000</p>
+        <p class="Not-Applied btn btn-soft btn-primary text-black mb-2">
           Not Applied
-        </button>
-        <p>
+        </p>
+        <p class="Build">
           Transform complex data into compelling visualizations. Required
           skills: D3.js, React, and strong analytical thinking.
         </p>
         <br />
+        <div class="flex gap-3">
         <button
-          id="Interview-btn2"
-          class="btn btn-bg-white text-green-500 border-green-500"
+          id=""
+          class="Interview-btn2 btn btn-bg-white text-green-500 border-green-500"
         >
           Interview
         </button>
         <button
-          id="Rejected-btn2"
-          class="btn btn-bg-white text-red-500 border-red-500"
+          id=""
+          class="Rejected-btn2 btn btn-bg-white text-red-500 border-red-500"
         >
           Rejected
         </button>
+        </div>
       </div>
-    </section>
-    <section id="MobileFirstCorp" class="section-card w-11/12 mx-auto p-5 mb-4 bg-white">
-      <div class="">
+      <!-- CloudFirst Inc -->
+      <div class="section-card w-[100%] mx-auto p-8  bg-white">
         <div class="flex justify-between">
           <div class="">
-            <h2>CloudFirst Inc</h2>
-            <p>Backend Developer</p>
+            <h2 class="tagName">CloudFirst Inc</h2>
+            <p class="Developer">Backend Developer</p>
           </div>
           <button class="delete-btn btn btn-square bg-white">
-           <i class="fa-solid fa-trash-can"></i>
+            <i class="fa-solid fa-trash-can"></i>
           </button>
         </div>
 
         <br />
-        <p class="mb-2">Seattle, WA • Full-time • $140,000 - $190,000</p>
-        <button class="btn btn-soft btn-primary text-black mb-2">
+        <p class="Remote mb-2">Seattle, WA • Full-time • $140,000 - $190,000</p>
+        <p class="Not-Applied btn btn-soft btn-primary text-black mb-2">
           Not Applied
-        </button>
-        <p>
+        </p>
+        <p class="Build"> 
           Design and maintain scalable backend systems using Python and AWS.
           Work with modern DevOps practices and cloud infrastructure.
         </p>
         <br />
+        <div class="flex gap-3">
         <button
-          id="Interview-btn2"
-          class="btn btn-bg-white text-green-500 border-green-500"
+          id=""
+          class="Interview-btn2 btn btn-bg-white text-green-500 border-green-500"
         >
           Interview
         </button>
         <button
-          id="Rejected-btn2"
-          class="btn btn-bg-white text-red-500 border-red-500"
+          id=""
+          class="Rejected-btn2 btn btn-bg-white text-red-500 border-red-500"
         >
           Rejected
         </button>
+        </div>
       </div>
-    </section>
-    <section id="MobileFirstCorp" class="section-card w-11/12 mx-auto p-5 mb-4 bg-white">
-      <div class="">
+    <!-- Innovation Labs -->
+      <div class="section-card w-[100%]w-[100%] mx-auto p-8 bg-white">
         <div class="flex justify-between">
           <div class="">
-            <h2>Innovation Labs</h2>
-            <p>UI/UX Engineer</p>
+            <h2 class="tagName">Innovation Labs</h2>
+            <p class="Developer">UI/UX Engineer</p>
           </div>
           <button class="delete-btn btn btn-square bg-white">
-           <i class="fa-solid fa-trash-can"></i>
+            <i class="fa-solid fa-trash-can"></i>
           </button>
         </div>
 
         <br />
-        <p class="mb-2">Austin, TX • Full-time • $110,000 - $150,000</p>
-        <button class="btn btn-soft btn-primary text-black mb-2">
+        <p class="Remote mb-2">Austin, TX • Full-time • $110,000 - $150,000</p>
+        <p class="Not-Applied btn btn-soft btn-primary text-black mb-2">
           Not Applied
-        </button>
-        <p>
+        </p>
+        <p class="Build">
           Create beautiful and functional user interfaces for our suite of
           products. Strong design skills and frontend development expertise
           required.
         </p>
         <br />
+        <div class="flex gap-3">
         <button
-          id="Interview-btn2"
-          class="btn btn-bg-white text-green-500 border-green-500"
+          id=""
+          class="Interview-btn2 btn btn-bg-white text-green-500 border-green-500"
         >
           Interview
         </button>
         <button
-          id="Rejected-btn2"
-          class="btn btn-bg-white text-red-500 border-red-500"
+          id=""
+          class="Rejected-btn2 btn btn-bg-white text-red-500 border-red-500"
         >
           Rejected
         </button>
+        </div>
       </div>
-    </section>
-    <section id="MobileFirstCorp" class="section-card w-11/12 mx-auto p-5 mb-4 bg-white">
-      <div class="">
+<!-- MegaCorp Solutions -->
+      <div class="section-card w-[100%] mx-auto p-8  bg-white">
         <div class="flex justify-between">
           <div class="">
-            <h2>MegaCorp Solutions</h2>
-            <p>JavaScript Developer</p>
+            <h2 class="tagName">MegaCorp Solutions</h2>
+            <p class="Developer">JavaScript Developer</p>
           </div>
           <button class="delete-btn btn btn-square bg-white">
             <i class="fa-solid fa-trash-can"></i>
@@ -255,36 +291,37 @@
         </div>
 
         <br />
-        <p class="mb-2">New York, NY • Full-time • $130,000 - $170,00</p>
-        <button class="btn btn-soft btn-primary text-black mb-2">
+        <p class="Remote mb-2">New York, NY • Full-time • $130,000 - $170,00</p>
+        <p class="Not-Applied btn btn-soft btn-primary text-black mb-2">
           Not Applied
-        </button>
-        <p>
+        </p>
+        <p class="Build">
           Build enterprise applications with JavaScript and modern frameworks.
           We offer competitive compensation, health insurance, and professional
           development opportunities.
         </p>
         <br />
+        <div class="flex gap-3">
         <button
-          id="Interview-btn2"
-          class="btn btn-bg-white text-green-500 border-green-500"
+          id=""
+          class="Interview-btn2 btn btn-bg-white text-green-500 border-green-500"
         >
           Interview
         </button>
         <button
-          id="Rejected-btn2"
-          class="btn btn-bg-white text-red-500 border-red-500"
+          id=""
+          class="Rejected-btn2 btn btn-bg-white text-red-500 border-red-500"
         >
           Rejected
         </button>
+        </div>
       </div>
-    </section>
-    <section id="MobileFirstCorp" class="section-card w-11/12 mx-auto p-5 mb-4 bg-white">
-      <div class="">
+      <!-- StartupXYZ -->
+      <div class="section-card w-[100%] mx-auto p-8  bg-white">
         <div class="flex justify-between">
           <div class="">
-            <h2>StartupXYZ</h2>
-            <p>Full Stack Engineer</p>
+            <h2 class="tagName">StartupXYZ</h2>
+            <p class="Developer">Full Stack Engineer</p>
           </div>
           <button class="delete-btn btn btn-square bg-white">
             <i class="fa-solid fa-trash-can"></i>
@@ -292,78 +329,73 @@
         </div>
 
         <br />
-        <p class="mb-2">Remote • Full-time • $120,000 - $160,000</p>
-        <button class="btn btn-soft btn-primary text-black mb-2">
+        <p class="Remote mb-2">Remote • Full-time • $120,000 - $160,000</p>
+        <p class="Not-Applied btn btn-soft btn-primary text-black mb-2">
           Not Applied
-        </button>
-        <p>
-          Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.
+        </p>
+        <p class="Build">
+          Join our fast-growing startup and work on our core platform.
+          Experience with Node.js and React required. Great benefits and equity
+          package included.
         </p>
         <br />
+        <div class="flex gap-3">
         <button
-          id="Interview-btn2"
-          class="btn btn-bg-white text-green-500 border-green-500"
+          id=""
+          class="Interview-btn2 btn btn-bg-white text-green-500 border-green-500"
         >
           Interview
         </button>
         <button
-          id="Rejected-btn2"
-          class="btn btn-bg-white text-red-500 border-red-500"
+          id=""
+          class="Rejected-btn2 btn btn-bg-white text-red-500 border-red-500"
         >
           Rejected
         </button>
+        </div>
       </div>
-    </section>
-    <section id="MobileFirstCorp" class="section-card w-11/12 mx-auto p-5 mb-4 bg-white">
-      <div class="">
+      <!-- TechCorp Industries -->
+      <div class="section-card w-[100%] mx-auto p-8 bg-white">
         <div class="flex justify-between">
           <div class="">
-            <h2>TechCorp Industries</h2>
-            <p>Senior Frontend Developer</p>
+            <h2 class="tagName">TechCorp Industries</h2>
+            <p class="Developer">Senior Frontend Developer</p>
           </div>
           <button class="delete-btn btn btn-square bg-white">
-            <i class="fa-solid fa-trash-can "></i>
+            <i class="fa-solid fa-trash-can"></i>
           </button>
         </div>
 
         <br />
-        <p class="mb-2">Senior Frontend Developer</p>
-        <button class="btn btn-soft btn-primary text-black mb-2">
+        <p class="Remote mb-2">Senior Frontend Developer</p>
+        <p class="Not-Applied btn btn-soft btn-primary text-black mb-2">
           Not Applied
-        </button>
-        <p>
-          We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
+        </p>
+        <p class="Build">
+          We are looking for an experienced Frontend Developer to build scalable
+          web applications using React and TypeScript. You will work with a
+          talented team on cutting-edge projects.
         </p>
         <br />
+        <div class="flex gap-3">
         <button
-          id="Interview-btn2"
-          class="btn btn-bg-white text-green-500 border-green-500"
+          id=""
+          class="Interview-btn2 btn btn-bg-white text-green-500 border-green-500"
         >
           Interview
         </button>
         <button
-          id="Rejected-btn2"
-          class="btn btn-bg-white text-red-500 border-red-500"
+          id=""
+          class="Rejected-btn2 btn btn-bg-white text-red-500 border-red-500"
         >
           Rejected
         </button>
+        </div>
       </div>
     </section>
+    </main>
 
-    <script>
-      // document
-      //   .getElementById("Interview-btn2")
-      //   .addEventListener("click", function () {
-      //     const fristSection = document.getElementById("Mobile-First-Corp");
-      //     const SectionInterview = fristSection.value;
-      //   });
-      // document
-      //   .getElementById("Rejected-btn2")
-      //   .addEventListener("click", function () {
-      //     console.log("click");
-      //   });
-    </script>
-    <script src="./script/mashin.js"></script>
-    <script src="./script/interview.js"></script>
+    <script></script>
+    <script src="./script/togol.js"></script>
   </body>
 </html>
